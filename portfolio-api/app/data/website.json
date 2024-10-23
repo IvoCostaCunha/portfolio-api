@@ -1,0 +1,50 @@
+{
+    "aboutMe":  "Hello, my name is Ivo Costa Cunha and I'm a developper mostly in web apps, but I sometimes prefer backend stuff.", 
+    "diplomas": [
+      {
+        "title": "Master MIAGE INTENSE",
+        "year": "2023",
+        "description": "Master MIAGE INTENSE Université Côte d'Azur (Nice, France).",
+        "filePath": "assets/imgs/synthia.jpg"
+
+      },
+      {
+        "title": "Licence MIAGE",
+        "year": "2020",
+        "description": "Licence MIAGE from Université Côte d'Azur (Nice, France).",
+        "filePath": "assets/imgs/synthia.jpg"
+
+      },
+      {
+        "title": "BTS SIO",
+        "year": "2018",
+        "description": "Professional diploma Lycée Estienne d'Orves (Nice, France).",
+        "filePath": "assets/imgs/synthia.jpg"
+
+      }
+    ],  
+    "projects": [
+      {
+        "title": "portfolio-angular",
+        "year": "2023",
+        "tags": ["angular", "css", "nodejs", "frontend", "backend", "web", "typescript"],
+        "link": "https://ivocostacunha-portfolio.com",
+        "githubLink": "https://github.com/IvoCostaCunha/portfolio-angular",
+        "description": "My personnal portfolio to present myself and list my projects."
+      },
+      {
+        "title": "audio-player",
+        "year": "2022",
+        "tags": ["web component", "web","javascript", "webaudio"],
+        "link": "",
+        "githubLink": "https://github.com/IvoCostaCunha/audio-player",
+        "description": "Audio-player project that allows to play music in the web with webaudio, and modify the music signal live."
+      }
+    ], 
+    "contact": {
+      "tel": "+351 962 998 386",
+      "email": "ivo.costacunha@icloud.com",
+      "github": "https://github.com/IvoCostaCunha",
+      "linkedIn": "https://www.linkedin.com/in/ivo-costa-cunha/"
+    }
+  }

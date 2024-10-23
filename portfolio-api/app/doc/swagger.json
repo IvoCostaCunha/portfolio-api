@@ -1,0 +1,113 @@
+{
+  "openapi" : "3.1.0",
+  "info" : {
+    "title" : "Portfolio-app back-end API 1.0",
+    "description" : "API documentation of the portfolio-app backend API.",
+    "termsOfService" : "http://swagger.io/terms/",
+    "contact" : {
+      "name" : "Ivo Costa Cunha",
+      "url" : "https://github.com/IvoCostaCunha/portfolio-app",
+      "email" : "ivo.costacunha@icloud.com"
+    },
+    "license" : {
+      "name" : "MIT Licence",
+      "url" : "https://opensource.org/license/mit"
+    },
+    "version" : "1.0.11"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8080",
+    "description" : "Local dev server"
+  }, {
+    "url" : "https://portfolio-ivocostacunha-api.com",
+    "description" : "Live server"
+  } ],
+  "security" : [ {
+    "bearer_auth" : [ ]
+  } ],
+  "tags" : [ {
+    "name" : "website",
+    "description" : "Endpoints returning website data"
+  } ],
+  "paths" : {
+    "/api/1.0/website-data" : {
+      "get" : {
+        "tags" : [ "website" ],
+        "summary" : "Gets all the displayed website data",
+        "responses" : {
+          "200" : {
+            "description" : "Object containing website display data",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/WebsiteData"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "WebsiteData" : {
+        "required" : [ "aboutme", "contact", "education" ],
+        "properties" : {
+          "aboutme" : {
+            "description" : "About Me HTML Code"
+          },
+          "education" : {
+            "description" : "Education HTML Code"
+          },
+          "projects" : {
+            "description" : "Projects HTML Code"
+          },
+          "contact" : {
+            "description" : "Contact HTML Code"
+          }
+        },
+        "example" : {
+          "application/json" : {
+            "aboutme" : "aboutme",
+            "education" : "education",
+            "mainprojects" : "main projects",
+            "contact" : "contact"
+          }
+        }
+      },
+      "User" : {
+        "required" : [ "email", "hash", "hashedPassword", "id" ],
+        "properties" : {
+          "id" : {
+            "description" : "ID of the user starting at 0."
+          },
+          "email" : {
+            "description" : "Email of the user."
+          },
+          "hasedPassword" : {
+            "description" : "Hashed password of the user."
+          },
+          "hash" : {
+            "description" : "Hash used to hash the password."
+          }
+        },
+        "example" : {
+          "application/json" : {
+            "id" : 0,
+            "email" : "user@domain.com",
+            "hashedPassword" : "<hashedPassword>",
+            "hash" : "<hash>"
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "bearer_auth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

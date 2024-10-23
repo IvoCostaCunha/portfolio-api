@@ -1,0 +1,31 @@
+# Confidentiality
+.env
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# Swagger
+.swagger-codegen
+
+# IDEs
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# VS Code / Codium
+/.vscode
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# System files
+.DS_Store
+Thumbs.db

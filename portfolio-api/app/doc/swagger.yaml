@@ -1,0 +1,101 @@
+openapi: 3.1.0
+info:
+  title: Portfolio-app back-end API 1.0
+  description: API documentation of the portfolio-app backend API.
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Ivo Costa Cunha
+    email: ivo.costacunha@icloud.com
+    url: https://github.com/IvoCostaCunha/portfolio-app
+  license:
+    name: MIT Licence
+    url: https://opensource.org/license/mit
+  version: 1.0.11
+
+servers:
+  - url: http://localhost:8080
+    description: Local dev server
+  - url: https://portfolio-ivocostacunha-api.com
+    description: Live server
+
+tags:
+    - name:  website
+      description: Endpoints returning website data
+
+paths:
+  /api/1.0/website-data:
+    get:
+      summary: Gets all the displayed website data
+      tags: [website]
+      responses:
+        "200": 
+          description: Object containing website display data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WebsiteData"
+
+components:
+  securitySchemes:
+    bearer_auth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    WebsiteData:
+      type: object
+      required:
+        - aboutme
+        - education
+        - mainprojects
+        - contact
+      properties:
+        aboutme: 
+          type: string
+          description: About Me HTML Code
+        education: 
+          type: string
+          description: Education HTML Code
+        projects: 
+          type: string
+          description: Projects HTML Code
+        contact: 
+          type: string
+          description: Contact HTML Code
+      example:
+        application/json:
+          aboutme: aboutme
+          education: education
+          mainprojects: main projects
+          contact: contact
+    User:
+      type: object
+      required:
+        - id
+        - email
+        - hashedPassword
+        - hash
+      properties:
+        id:
+          type: string
+          description: ID of the user starting at 0.
+        email:
+          type: string
+          description: Email of the user.
+        hasedPassword:
+          type: string
+          description: Hashed password of the user.
+        hash:
+          type: string
+          description: Hash used to hash the password.
+      example:
+        application/json:
+          id: 0
+          email: user@domain.com
+          hashedPassword: <hashedPassword>
+          hash: <hash>
+        
+
+security:
+  - bearer_auth: []
